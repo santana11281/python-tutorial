@@ -69,16 +69,27 @@ class LinkedList:
             temp = temp.next
         return temp
 
-    # def ifContains(self, value):
-    #     currentNode = self.head
-    #     while currentNode is not None:
-    #         currentNode = currentNode.next
-    #         print(currentNode.value)
-    #         if currentNode.value == value:
-    #             return True
-    #         else:
-    #             return False
+    def setValue(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
 
+    def insert(self, index, value):
+        if index > self.length or index < 0:
+            return False
+        elif index == self.length:
+            return self.append(value)
+        elif index == 0:
+            return self.prepend(value)
+
+        newNode = Node(value)
+        temp = self.get(index - 1)
+        newNode.next = temp.next
+        temp.next = newNode
+        self.length += 1
+        return True
 
 
 def printList(self):
@@ -92,5 +103,7 @@ myLinkList = LinkedList(23)
 myLinkList.append(24)
 myLinkList.append(25)
 myLinkList.prepend(22)
-print(myLinkList.get(0))
+myLinkList.insert(2, 22.5)
+# myLinkList.setValue(0, 1)
+print(myLinkList.length)
 # printList(myLinkList)
