@@ -10,4 +10,3 @@ print(exclude[0:3])
 print(uppecase.upper())
 print(splitSrt.split(','))
 
-print("mmg")
