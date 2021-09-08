@@ -25,6 +25,14 @@ class HashTable:
         for i, val in enumerate(self.data_map):
             print(i, ": ", val)
 
+    def keys(self):
+        all_keys = []
+        for i in range(len(self.data_map)):
+            if self.data_map[i] is not None:
+                for j in range(len(self.data_map[i])):
+                    all_keys.append(self.data_map[i][j][0])
+        return all_keys
+
 
 myHashTable = HashTable()
 
@@ -33,6 +41,6 @@ myHashTable.set_item("Ambar", 13)
 myHashTable.set_item("Mauricio", 7)
 myHashTable.set_item("Mauricio", 7)
 
-print(myHashTable.getItem("Ambar"))
+print(myHashTable.keys())
 
 # myHashTable.printTable()
