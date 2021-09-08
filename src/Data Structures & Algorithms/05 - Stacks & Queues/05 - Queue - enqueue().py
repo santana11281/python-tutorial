@@ -1,3 +1,6 @@
+import json
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -43,5 +46,8 @@ myQueue.enqueue(2)
 myQueue.enqueue(3)
 myQueue.enqueue(4)
 
-myQueue.printList()
+# myQueue.printList()
 
+parse = json.dumps(myQueue.__dict__)
+
+print(parse)

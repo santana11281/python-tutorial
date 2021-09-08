@@ -1,3 +1,6 @@
+import json
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -30,4 +33,7 @@ myStack = Stack(4)
 myStack.push(5)
 myStack.push(6)
 
-myStack.printList()
+# myStack.printList()
+
+
+# print(json.dumps(myStack.__dict__))
