@@ -18,7 +18,7 @@ class BinaryTree:
             self.root = new_node
             return True
         temp = self.root
-        while True:
+        while (True):
             if new_node.value == temp.value:
                 return False
             if new_node.value < temp.value:
@@ -26,21 +26,36 @@ class BinaryTree:
                     temp.left = new_node
                     return True
                 temp = temp.left
-            else:
+            else: 
                 if temp.right is None:
                     temp.right = new_node
                     return True
                 temp = temp.right
 
+    def BFS(self):
+        currentNode = self.root
+        queue = []
+        results = []
+        queue.append(currentNode)
+        while len(queue) > 0:
+            currentNode = queue.pop(0)
+            results.append(currentNode.value)
+            if currentNode.left is not None:
+                queue.append(currentNode.left)
+            if currentNode.right is not None:
+                queue.append(currentNode.right)
+        return results
+
 
 myBinaryTree = BinaryTree()
-myBinaryTree.insert(2)
-myBinaryTree.insert(1)
-myBinaryTree.insert(3)
+myBinaryTree.insert(47)
+myBinaryTree.insert(21)
+myBinaryTree.insert(76)
+myBinaryTree.insert(18)
+myBinaryTree.insert(27)
+myBinaryTree.insert(52)
+myBinaryTree.insert(82)
 
-print(myBinaryTree.root.value)
-print(myBinaryTree.root.left.value)
-print(myBinaryTree.root.right.value)
+print(myBinaryTree.BFS())
 
-# parse = json.dumps(myBinaryTree.__dict__)
-# print(parse)
+#  [47,21,76,18,27,52,82]

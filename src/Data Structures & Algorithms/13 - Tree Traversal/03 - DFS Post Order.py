@@ -32,15 +32,30 @@ class BinaryTree:
                     return True
                 temp = temp.right
 
+    def DFSPostOrder(self):
+        results = []
+
+        def traverse(currentNode):
+
+            if currentNode.left is not None:
+                traverse(currentNode.left)
+            if currentNode.right is not None:
+                traverse(currentNode.right)
+            results.append(currentNode.value)
+
+        traverse(self.root)
+        return results
+
 
 myBinaryTree = BinaryTree()
-myBinaryTree.insert(2)
-myBinaryTree.insert(1)
-myBinaryTree.insert(3)
+myBinaryTree.insert(47)
+myBinaryTree.insert(21)
+myBinaryTree.insert(76)
+myBinaryTree.insert(18)
+myBinaryTree.insert(27)
+myBinaryTree.insert(52)
+myBinaryTree.insert(82)
 
-print(myBinaryTree.root.value)
-print(myBinaryTree.root.left.value)
-print(myBinaryTree.root.right.value)
+print(myBinaryTree.DFSPostOrder())
 
-# parse = json.dumps(myBinaryTree.__dict__)
-# print(parse)
+# [18, 27, 21, 52, 82, 76, 47]
