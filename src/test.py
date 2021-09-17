@@ -1,5 +1,7 @@
 import json
 
+import orjson as orjson
+
 
 class Node:
     def __init__(self, value):
@@ -17,6 +19,5 @@ class LinkedList:
 
 myLinkList = LinkedList(23)
 
-jsonStr = json.dumps(myLinkList.__dict__)
-print(jsonStr)
+
 # print(myLinkList.head.value)

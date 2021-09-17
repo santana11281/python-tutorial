@@ -1,3 +1,8 @@
+import json
+
+
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -91,21 +96,19 @@ class LinkedList:
         self.length += 1
         return True
 
-    def remove(self,index):
+    def remove(self, index):
         if index == self.length:
-            return  self.pop()
+            return self.pop()
         elif index == 0:
             return self.pop_first()
         elif index < 0 or index > self.length:
             return None
 
-        prev = self.get(index-1)
+        prev = self.get(index - 1)
         temp = prev.next
         prev.next = temp.next
         temp.next = None
         return temp.value
-
-
 
 
 def printList(self):
@@ -122,5 +125,9 @@ myLinkList.prepend(22)
 # myLinkList.remove(2)
 # myLinkList.insert(2, 22.5)
 # myLinkList.setValue(0, 1)
-print(myLinkList.remove(2))
+
+jsonStr = json.dumps( myLinkList,default=lambda o: o.__dict__,
+                      sort_keys=False)
+print(jsonStr)
+# print(myLinkList.remove(2))
 # printList(myLinkList)
