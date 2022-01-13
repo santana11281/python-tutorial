@@ -22,10 +22,6 @@ def merge(array1, array2):
 
 
 
-
-
-
-
 def mergeSort(array3):
     if len(array3) == 1:
         return array3
