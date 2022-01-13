@@ -30,10 +30,9 @@ def mergeSort(array3):
     return merge(mergeSort(left), mergeSort(right))
 
 
-arr3 = [6,5,4,3,2,1,0]
+arr3 = [6, 5, 4, 3, 2, 1, 0]
 arr1 = [1, 4, 5, 8]
 arr2 = [2, 3, 6, 7]
-
 
 print(mergeSort(arr3))
 # merge(arr1, arr2)
